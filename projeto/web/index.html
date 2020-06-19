@@ -1,0 +1,53 @@
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Classificação</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	</head>
+	<body class="w-80 p-2 container center-align">
+		<div class="card card-image" style="background-image: url('https://www.canva.com/pt_br/aprenda/wp-content/uploads/sites/9/2020/04/Fundo-de-Arco-%C3%8Dris-para-Zoom-1.png');">
+    		<div class="text-black rgba-stylish-strong py-5 px-5 z-depth-4">
+
+				
+
+				<div class="text-center">
+					<h3 class="white-text mb-5 mt-4 font-weight-bold text-uppercase"><strong>CLASSIFICAÇÃO DE ROCHAS GERADORAS DE PETRÓLEO A PARTIR DE </br> DADOS HIPERESPECTRAIS E MACHINE LEARNING</strong></h3>
+				</div>
+
+				<div id="conteudo">
+				<p><font size="4"><b>Esta aplicação permite ao usuário duas opções: </b></font></p>
+				<p><b>1. <u>Predição</u>:</b> classificar o seu dado hiperespectral de acordo com classes pré-definidas a partir de um modelo já treinado e validado;</p>
+				<p><font size="2">Informações sobre este modelo: algoritmo de classificação SVM, 3 classes (alta (classe 0), média (1) e baixa (2) fração orgânica) e 4 features com feições espectrais características (f1, f2, f3 e f4). Acurácia do modelo = 0,90. </font></p>
+				<p><b>2. <u>Classificação</u>:</b> Utilizar sua própria base de dados para treinar e validar um novo modelo de classificação por SVM, podendo optar por quais classes e features serão utilizadas.</p>
+				<p><font size="2">(É possível depois classificar novos dados a partir deste seu modelo.) </font></p>
+				<p><font size="2"><u>Nota</u>: Se esta opção (Classificação) for utilizada, você deve ter um conjunto de dados maior para que o treinamento e validação do algoritmo tenham informações suficientes para gerar modelos consistentes e que possam ser generalizados.</font></p>
+				<hr>
+
+				<p><font size="4"><b>Para que a classificação dos seus dados hiperespectrais ocorra corretamente, fique atento aos seguintes aspectos:</b></font></p>
+				<p>1. O arquivo com os dados que serão preditos ou classificados deve estar na extensão .csv e atender os seguintes requisitos: (1) utilizar como separador entre as colunas ponto e vírgula (;) e como separador decimal ponto (.); (2) conter dados de amostras nas linhas e espectrais nas colunas; (3) os rótulos das colunas devem ser 'Classe' (válido apenas para função de classificação), 'Amostra' e as bandas espectrais de interesse. </p>
+				<p>2. Insira o arquivo que você deseja utilizar na pasta de trabalho “app/input”, nomeado por “predict.csv” ou “classification.csv”, dependendo de qual função será utilizada na aplicação.</p>
+				<p>3. Somente após concluir as etapas 1 e 2, clique “Predizer classes com modelo SVM existente” ou em “Gerar novo modelo de classificação SVM”. </p>
+				<hr>
+				</div>
+				
+					<form action="http://localhost:8081" method="POST">
+						<div class="row d-flex align-items-center">
+							<div class="text-center col-md-12 mt-3 mb-2">
+								<button class="btn btn-info btn-block" type="submit">Predizer classes com modelo SVM existente</button>
+							</div>
+						</div>
+					</form>
+				
+					<form action="http://localhost:8080" method="POST">
+						<div class="row d-flex align-items-center">
+							<div class="text-center col-md-12 mt-3 mb-2">
+								<button class="btn btn-info btn-block" type="submit">Gerar novo modelo de classificação SVM</button>
+							</div>
+						</div>
+					</form>
+					
+			</div>
+		</div>
+	</body>
+</html>
